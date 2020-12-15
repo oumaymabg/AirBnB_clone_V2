@@ -15,7 +15,7 @@ class FileStorage:
         else:
             new = {}
             for key, val in FileStorage.__objects.items():
-                if val.__class__ is cls:
+                if val.__class__ == cls:
                     new[key] = val
             return new
 
