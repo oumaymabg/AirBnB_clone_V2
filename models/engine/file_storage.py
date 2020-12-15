@@ -57,6 +57,7 @@ class FileStorage:
             pass
 
     def delete(self, obj=None):
+        """ Task 5 """
         if obj is not None:
             tag = obj.__class__.__name__ + "." + obj.id
             if tag in FileStorage.__objects:
