@@ -59,4 +59,5 @@ class FileStorage:
     def delete(self, obj=None):
         if obj is not None:
             tag = obj.__class__.__name__ + "." + obj.id
-            del self.__objects[tag]
+            if tag in self.__objects:
+                del self.__objects[tag]
