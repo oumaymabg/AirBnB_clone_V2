@@ -13,7 +13,7 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
-            if args is not None:
+            if args is not ():
                 self.__dict__.update(args[0])
 
             storage.new(self)
