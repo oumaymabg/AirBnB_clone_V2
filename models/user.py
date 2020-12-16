@@ -4,6 +4,7 @@ from models.base_model import BaseModel
 from sqlalchemy import Column, String
 from os import getenv
 
+
 storage_type = getenv("HBNB_TYPE_STORAGE")
 
 
