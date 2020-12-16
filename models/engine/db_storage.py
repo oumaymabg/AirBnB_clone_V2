@@ -12,21 +12,22 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 
 
+database = getenv("HBNB_MYSQL_DB")
+user = getenv("HBNB_MYSQL_USER")
+host = getenv("HBNB_MYSQL_HOST")
+password = getenv("HBNB_MYSQL_PWD")
+hbnb_env = getenv("HBNB_ENV")
+
+
 class DBStorage:
-    """ Storage class Task 6 """
+    """class DBStorage"""
     __engine = None
     __session = None
 
     def __init__(self):
-        """ init Task 6 """
-        self.__engine = create_engine("mysql+mysqldb://{}:{}@{}/{}".format(
-            getenv("HBNB_MYSQL_USER"),
-            getenv("HBNB_MYSQL_PWD"),
-            getenv("HBNB_MYSQL_HOST"),
-            getenv("HBNB_MYSQL_DB")),
-            pool_pre_ping=True)
-
-        if getenv("HBNB_ENV") == "test":
+        """initialize instances"""
+        self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'.format(user, password, host, database), pool_pre_ping=True)
+        if hbnb_env == "test":
             Base.metadata.drop_all(self.__engine)
 
     def all(self, cls=None):
