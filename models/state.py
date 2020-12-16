@@ -6,12 +6,13 @@ from sqlalchemy.orm import relationship
 from models.city import City
 import models
 
+
 class State(BaseModel):
     """ State class """
     __tablename__ = "states"
     name = Column(String(128), nullable=False)
-	cities = relationship("City", backref="state", cascade="all, delete")
-    
+    cities = relationship("City", backref="state", cascade="all, delete")
+
     @property
     def cities(self):
         """ Task 6 """
