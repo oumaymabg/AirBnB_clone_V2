@@ -46,7 +46,7 @@ class FileStorage:
             'BaseModel': BaseModel, 'User': User, 'Place': Place,
             'State': State, 'City': City, 'Amenity': Amenity,
             'Review': Review
-            }
+        }
         try:
             temp = {}
             with open(FileStorage.__file_path, 'r') as f:
@@ -62,4 +62,4 @@ class FileStorage:
             tag = obj.__class__.__name__ + "." + obj.id
             if tag in FileStorage.__objects:
                 del FileStorage.__objects[tag]
-                self.save()
+                self.save
