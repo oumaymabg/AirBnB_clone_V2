@@ -26,7 +26,9 @@ class DBStorage:
 
     def __init__(self):
         """initialize instances"""
-        self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'.format(user, password, host, database), pool_pre_ping=True)
+        self.__engine = create_engine(
+            'mysql+mysqldb://{}:{}@{}/{}'
+            .format(user, password, host, database), pool_pre_ping=True)
         if hbnb_env == "test":
             Base.metadata.drop_all(self.__engine)
 
