@@ -62,4 +62,4 @@ class FileStorage:
             tag = obj.__class__.__name__ + "." + obj.id
             if tag in FileStorage.__objects:
                 del FileStorage.__objects[tag]
-                self.save
+                self.save()
