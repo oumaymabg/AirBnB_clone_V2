@@ -28,4 +28,4 @@ class State(BaseModel, Base):
         for x in models.storage.all(City).values():
             if x.state_id == self.id:
                 ls.append(x)
-        return ls
+        return
