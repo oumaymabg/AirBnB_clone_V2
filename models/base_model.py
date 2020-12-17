@@ -58,4 +58,5 @@ class BaseModel:
 
     def delete(self):
         """ Task 6 """
+        from models import storage
         storage.delete(self)
