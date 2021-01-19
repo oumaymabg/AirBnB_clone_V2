@@ -7,30 +7,16 @@ app = Flask(__name__)
 
 @app.route('/', strict_slashes=False)
 def hello_hbnb():
-    """displays hello hbnb
-    Returns:
-        hello hbnb
-    """
     return "Hello HBNB!"
 
 
 @app.route('/hbnb', strict_slashes=False)
 def display_hbnb():
-    """displays hbnb
-    Returns:
-        hbnb
-    """
     return "HBNB"
 
 
 @app.route('/c/<text>', strict_slashes=False)
 def display_C(text):
-    """displays  c
-    Args:
-        display c  (str): display c
-    Returns:
-        display c
-    """
     return 'C %s' % text.replace('_', ' ')
 
 
@@ -38,12 +24,6 @@ def display_C(text):
 @app.route('/python/', defaults={'text': 'is cool'}, strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
 def display_python(text):
-    """displays python
-    Args:
-        python (str): python
-    Returns:
-        python
-    """
     return 'Python %s' % text.replace('_', ' ')
 
 
