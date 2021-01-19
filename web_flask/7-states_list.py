@@ -23,7 +23,7 @@ def list_states():
     all_states = []
     for k, v in dict_states.items():
         all_states.append(v)
-    return render_template('7-states_list.html', all_states=all_states)
+        return render_template('7-states_list.html', all_states=all_states)
 
 
 if __name__ == "__main__":
