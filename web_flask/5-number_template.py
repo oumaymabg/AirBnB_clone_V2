@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from flask import Flask, render_template
+from flask import Flask
 """import class Flask,  Number template method"""
 app = Flask(__name__)
 
