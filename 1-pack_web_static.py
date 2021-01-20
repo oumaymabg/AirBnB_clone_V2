@@ -6,8 +6,8 @@ from fabric.api import local
 
 def do_pack():
     """ added to the final archive"""
-    ate = datetime.utcnow().strftime("%Y%m%d%H%M%S")
-    packer = "versions/web_static_{}.tgz".format(date)
+    date = datetime.utcnow().strftime("%Y%m%d%H%M%S")
     local("mkdir -p versions")
-    local("tar -cvzf {} web_static".format(packer))
+    packer = "versions/web_static_{}.tgz".format(date)
+    local("sudo tar -cvzf versions/web_static_{}.tgz web_static/".format(date))
     return packer
